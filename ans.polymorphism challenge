@@ -1,0 +1,25 @@
+class Animal:
+    def move(self):
+        pass
+
+class Dog(Animal):
+    def move(self):
+        return "Running 🐕"
+
+class Bird(Animal):
+    def move(self):
+        return "Flying 🦅"
+
+class Fish(Animal):
+    def move(self):
+        return "Swimming 🐟"
+
+# Creating objects
+dog = Dog()
+bird = Bird()
+fish = Fish()
+
+# Demonstrating polymorphism
+animals = [dog, bird, fish]
+for animal in animals:
+    print(animal.move())
