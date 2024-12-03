@@ -1,0 +1,34 @@
+class Smartphone:
+    def __init__(self, brand, model, storage, battery_life):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+        self.battery_life = battery_life
+
+    def display_info(self):
+        return f"{self.brand} {self.model} with {self.storage}GB storage and {self.battery_life} hours battery life."
+
+    def make_call(self, number):
+        return f"Calling {number} from {self.model}."
+
+# Example of an inherited class to explore polymorphism and encapsulation
+class Smartwatch(Smartphone):
+    def __init__(self, brand, model, storage, battery_life, strap_material):
+        super().__init__(brand, model, storage, battery_life)
+        self.strap_material = strap_material
+
+    def display_info(self):
+        return f"{self.brand} {self.model} with {self.storage}GB storage, {self.battery_life} hours battery life, and {self.strap_material} strap."
+
+    def make_call(self, number):
+        return f"Calling {number} from {self.model} smartwatch."
+
+# Creating objects
+phone = Smartphone("Apple", "iPhone 13", 128, 20)
+watch = Smartwatch("Apple", "Watch Series 7", 32, 18, "Silicone")
+
+print(phone.display_info())
+print(phone.make_call("123-456-7890"))
+
+print(watch.display_info())
+print(watch.make_call("987-654-3210"))
